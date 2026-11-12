@@ -14,13 +14,13 @@
 
 三个 Skill 共享同一份考纲数据源（内置在各自 `references/` 中），知识点编号（如 `5.4 常用函数`）在出题、组卷、判分之间完全对齐。
 
-## 安装
+## 安装与多平台分发
 
 ### Claude Code
 
 ```bash
 # 全局（对所有项目生效）
-git clone https://github.com/<your-name>/hubei-exam-skills.git
+git clone https://github.com/z324169276/hubei-exam-skills.git
 cp -r hubei-exam-skills/hubei-exam-author ~/.claude/skills/
 
 # 或项目级（只对当前项目生效）
@@ -32,6 +32,22 @@ cp -r hubei-exam-skills/hubei-exam-author .claude/skills/
 ```bash
 cp -r hubei-exam-skills/hubei-exam-author .trae/skills/
 ```
+
+也可在 Trae 的「技能管理中心」通过本地上传方式导入对应技能目录。
+
+### SkillHub / WorkBuddy 技能市场
+
+三个 Skill 均为标准 Agent Skill 格式（`SKILL.md` + `references/`），可直接上传到 SkillHub、WorkBuddy 技能市场等支持该格式的平台：
+
+1. 把对应技能目录压缩为 zip（zip 内顶层为技能文件夹，如 `hubei-exam-author/SKILL.md`）。PowerShell 一行打包：
+
+```powershell
+Compress-Archive -Path hubei-exam-author -DestinationPath hubei-exam-author.zip
+```
+
+2. 在目标平台网页端上传 zip，按提示填写名称、描述、分类后提交审核。
+
+> 说明：DeepSeek Harness（DSH）插件采用 Cordis 插件格式（npm 包），与 SKILL.md 技能格式不同，本仓库暂不直接适配 DSH；如需接入将另行提供 dsh-plugin 版本。
 
 三个 Skill 独立安装，按需取用；判分建议与出题一起装，形成「出题 → 组卷 → 判分」闭环。
 
