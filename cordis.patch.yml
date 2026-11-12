@@ -1,0 +1,9 @@
+# DeepSeek Harness 插件入口：复用 DSH 自带的文件系统 skill 提供方，
+# 把本包根目录当作 skill 根目录，从而发现三个技能目录
+# （hubei-exam-author / hubei-exam-paper / hubei-exam-grader）各自的 SKILL.md。
+- insert:
+    - id: hubei-exam-skills
+      name: '@deepseek-ai/dsh-skill-filesystem'
+      config:
+        providerName: hubei-exam-skills
+        bundledSkillDir: !!js process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('hubei-exam-skills/package.json'))

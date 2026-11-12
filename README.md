@@ -47,7 +47,15 @@ Compress-Archive -Path hubei-exam-author -DestinationPath hubei-exam-author.zip
 
 2. 在目标平台网页端上传 zip，按提示填写名称、描述、分类后提交审核。
 
-> 说明：DeepSeek Harness（DSH）插件采用 Cordis 插件格式（npm 包），与 SKILL.md 技能格式不同，本仓库暂不直接适配 DSH；如需接入将另行提供 dsh-plugin 版本。
+### DeepSeek Harness（DSH）
+
+本仓库同时是标准 DSH 插件：根目录 `package.json` 声明 `dsh.bundle` manifest，`cordis.patch.yml` 复用 DSH 内置的文件系统 skill 提供方（`@deepseek-ai/dsh-skill-filesystem`）注册三个技能，安装后即可在 dsh 里直接使用。安装命令：
+
+```sh
+dsh plugin --profile web add github:z324169276/hubei-exam-skills
+```
+
+本插件已提交 [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) 精选列表，合并后会自动同步到 dsh 插件市场（**插件 → 插件市场**，搜索 `hubei-exam-skills` 一键安装）。
 
 三个 Skill 独立安装，按需取用；判分建议与出题一起装，形成「出题 → 组卷 → 判分」闭环。
 

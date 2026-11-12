@@ -1,0 +1,30 @@
+{
+  "name": "hubei-exam-skills",
+  "version": "1.0.0",
+  "description": "湖北技能高考计算机类 Agent Skills：按 2026 考纲出题、整卷组卷、按规则判分。",
+  "license": "MIT",
+  "author": "z324169276",
+  "homepage": "https://github.com/z324169276/hubei-exam-skills",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/z324169276/hubei-exam-skills.git"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "agent-skill",
+    "exam",
+    "education"
+  ],
+  "files": [
+    "hubei-exam-author",
+    "hubei-exam-paper",
+    "hubei-exam-grader",
+    "cordis.patch.yml"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
