@@ -1,6 +1,6 @@
 # DeepSeek Harness 插件入口：复用 DSH 自带的文件系统 skill 提供方，
-# 把本包根目录当作 skill 根目录，从而发现三个技能目录
-# （hubei-exam-author / hubei-exam-paper / hubei-exam-grader）各自的 SKILL.md。
+# 把本包根目录当作 skill 根目录，从而发现四个技能目录
+# （hubei-exam-author / hubei-exam-paper / hubei-exam-grader / hubei-exam-diagnose）各自的 SKILL.md。
 - insert:
     - id: hubei-exam-skills
       name: '@deepseek-ai/dsh-skill-filesystem'
